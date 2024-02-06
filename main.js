@@ -5,13 +5,14 @@ const path = require('path');
 const createMainWindow = () => {
   const mainWindow = new BrowserWindow({
     title: 'Yu-Gi-Oh Helper',
-    width: 1920,
-    height: 1080,
+    width: 960,
+    height: 540,
   });
   mainWindow.maximize();
-  mainWindow.setMenu(null);
+  //mainWindow.setMenu(null);
+  mainWindow.webContents.openDevTools();
   const startUrl = url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, './app/build/index.html'),
     protocol: 'file',
   });
   mainWindow.loadURL(startUrl);
