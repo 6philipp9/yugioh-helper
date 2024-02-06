@@ -9,13 +9,13 @@ const createMainWindow = () => {
     height: 540,
   });
   mainWindow.maximize();
-  //mainWindow.setMenu(null);
+  mainWindow.setMenu(null);
   mainWindow.webContents.openDevTools();
   const startUrl = url.format({
     pathname: path.join(__dirname, './app/build/index.html'),
     protocol: 'file',
   });
-  mainWindow.loadURL(startUrl);
+  mainWindow.loadURL("http://localhost:3000/newcards");
 };
 
 app.whenReady().then(createMainWindow);
